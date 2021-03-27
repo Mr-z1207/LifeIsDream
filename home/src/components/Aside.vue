@@ -1,7 +1,8 @@
 <template>
-  <div class="Aside">
-    <h1>浮生若梦</h1>
-  </div>
+	<div class="Aside">
+		<router-link to="/"><h1>浮生若梦</h1></router-link>
+		<router-link to="/life">人生记事</router-link>
+	</div>
 </template>
 
 <script>
@@ -15,5 +16,10 @@ export default {
 
 <!-- 添加"scoped"属性，使CSS样式只在当前组件生效 -->
 <style scoped lang="less">
-
+	h1{
+		font-size: 20px;
+		height: 60px;
+		line-height: 60px;
+		border-bottom: 1px solid #ccc;
+	}
 </style>
