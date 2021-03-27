@@ -1,7 +1,19 @@
 <template>
 	<div class="Aside">
-		<router-link to="/"><h1>浮生若梦</h1></router-link>
-		<router-link to="/life">人生记事</router-link>
+		<ul>
+			<router-link to="/" v-slot="{ isActive }">
+				<li :class="{ active: isActive }">浮生若梦</li>
+			</router-link>
+			<router-link to="/life" v-slot="{ isActive }">
+				<li :class="{ active: isActive }">人生记事</li>
+			</router-link>
+			<router-link to="/mood" v-slot="{ isActive }">
+				<li :class="{ active: isActive }">心情分享</li>
+			</router-link>
+			<router-link to="/blog" v-slot="{ isActive }">
+				<li :class="{ active: isActive }">我的博客</li>
+			</router-link>
+		</ul>
 	</div>
 </template>
 
@@ -16,5 +28,28 @@ export default {
 
 <!-- 添加"scoped"属性，使CSS样式只在当前组件生效 -->
 <style scoped lang="less">
+.Aside{
+	a{
+		color: #99CCFF;
+		text-decoration: none;
 
+		li{
+			margin: 0 auto;
+			padding: 10px;
+			width: 85%;
+			font-size: 20px;
+			line-height: 1.7;
+			font-weight: bold;
+			border-top: 1px solid #89898979;
+		}
+		&:first-child li{
+			margin-top: 60px;
+			border-top: none;
+		}
+	}
+
+	.active{
+		background-color: #565753D0;
+	}
+}
 </style>

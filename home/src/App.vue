@@ -1,12 +1,12 @@
 <template>
 	<el-container>
 		<!-- 侧边栏 -->
-		<el-aside>
+		<el-aside class="asideWrapper" width="20%">
 			<Aside></Aside>
 		</el-aside>
 
 		<!-- 主体内容 -->
-		<el-container class="containerWrapper" :style="{ height: asideHeight }">
+		<el-container :style="{ height: containerHeight }">
 
 			<!-- 头部 -->
 			<el-header class="headerWrapper">
@@ -53,7 +53,7 @@
 			}
 		},
 		computed: {
-			asideHeight(){
+			containerHeight(){
 				return this.screenHeight + "px"
 			}
 		}
@@ -62,23 +62,25 @@
 
 <style lang="less">
 #app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 }
 
 .el-header {
-	background-color: #B3C0D1FF;
+	background-color: #35264F;
 }
 .el-aside {
-	background-color: #D3DCE6;
+	min-width: 150px;
+	max-width: 250px;
+	background-color: #1A1A1A;
 }
 .el-main {
-	background-color: #E9EEF3;
+	background-color: #FFFFFF;
 }
 .el-footer {
-	background-color: #E9EEF3;
+	background-color: #FFFFFF;
 	border-top:  1px solid #ccc;
 }
 </style>
