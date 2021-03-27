@@ -29,8 +29,7 @@ module.exports = {
         'style-resources-loader': {
             preProcessor: 'less',
             patterns: [
-                //全局引入的less文件（不能使用别名路径）
-                path.resolve('./src/assets/style/common.less'),
+                resolve('src/assets/style/common.less'),
             ]
         }
     }

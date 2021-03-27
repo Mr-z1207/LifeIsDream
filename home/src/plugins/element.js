@@ -4,7 +4,8 @@ import {
 	ElContainer,
 	ElAside,
 	ElMain,
-	ElFooter
+	ElFooter,
+	ElAffix
   } from 'element-plus'
 import lang from 'element-plus/lib/locale/lang/zh-cn'
 import locale from 'element-plus/lib/locale'
@@ -17,4 +18,5 @@ export default (app) => {
   app.use(ElAside)
   app.use(ElMain)
   app.use(ElFooter)
+  app.use(ElAffix)
 }

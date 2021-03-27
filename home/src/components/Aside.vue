@@ -16,10 +16,5 @@ export default {
 
 <!-- 添加"scoped"属性，使CSS样式只在当前组件生效 -->
 <style scoped lang="less">
-	h1{
-		font-size: 20px;
-		height: 60px;
-		line-height: 60px;
-		border-bottom: 1px solid #ccc;
-	}
+
 </style>
