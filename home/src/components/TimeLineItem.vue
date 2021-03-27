@@ -12,7 +12,7 @@
     <div v-if="!$slots.dot"
       class="el-timeline-item__node"
       :class="[
-        `el-timeline-item__node--${size || ''}`,
+        `el-timeline-item__node--normal`,
         `el-timeline-item__node--${type || ''}`
       ]"
       :style="{
@@ -31,8 +31,8 @@
     <div class="el-timeline-item__wrapper">
       <div v-if="!hideTimestamp && placement === 'top'"
         class="el-timeline-item__timestamp is-top">
-        <span class="el-timeline-item__timestamp_span1">{{timestamp}}</span>
-        <span class="el-timeline-item__timestamp_span2">{{title}}</span>
+        <span class="el-timeline-item__timestamp_span el-timeline-item__timestamp_span1">{{timestamp}}</span>
+        <span class="el-timeline-item__timestamp_span el-timeline-item__timestamp_span2">{{title}}</span>
       </div>
 
       <div class="el-timeline-item__content">
@@ -72,21 +72,40 @@
 
       color: String,
 
-      size: {
-        type: String,
-        default: 'normal'
-      },
-
       icon: String
     }
   };
 </script>
 
-<style lang='scss' scoped>
-@include e(tail) {
+<style lang='less' scoped>
+.el-timeline-item__tail{
+  border-left-width: 4px;
+  left: 135px;
+}
+.el-timeline-item__node{
+  width: 24px;
+  height: 24px;
+  left: 125px;
+}
+.el-timeline-item__wrapper{
+  padding-left: 0;
+}
+.el-timeline-item__timestamp_span{
   position: absolute;
-  left: 4px;
-  height: 100%;
-  border-left: 2px solid $--timeline-node-color;
+  top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.el-timeline-item__timestamp_span1{
+  left: 20px;
+}
+.el-timeline-item__timestamp_span2{
+  left: 165px;
+}
+.el-timeline-item__timestamp.is-top{
+  margin-bottom: 30px;
+}
+.el-timeline-item__content{
+  margin-left: 158px;
 }
 </style>

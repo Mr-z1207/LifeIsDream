@@ -8,7 +8,7 @@
 					:title="life.title"
 				>
 					<el-card>
-						<p>王小虎 提交于 2018/4/2 20:46</p>
+						<p>{{life.content}}</p>
 					</el-card>
 				</TimeLineItem>
 			</el-timeline>
@@ -28,11 +28,13 @@
 				lifes: [
 				{
 					title: "出生",
-					timestamp: "2018/4/12",
+					timestamp: "1998/6/5",
+					content: "第一眼见到这个世界，会是什么养的心情呢？"
 				},
 				{
-					title: "叫爸爸",
-					timestamp: "2018/4/18",
+					title: "上小学",
+					timestamp: "2006/9/1",
+					content: "开学啦，不知道会不会交到好朋友？"
 				}
 				]
 			}
