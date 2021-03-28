@@ -6,10 +6,10 @@ import Mood from 'views/Mood/store'
 import Blog from 'views/Blog/store'
 
 export default createStore({
-  modules: {
-  	Home,
-  	Life,
-  	Mood,
-  	Blog
-  }
+	modules: {
+		Home,
+		Life,
+		Mood,
+		Blog
+	}
 })

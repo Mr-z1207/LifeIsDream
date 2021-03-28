@@ -2,7 +2,7 @@
 	<div class="Life">
 		<div class="timelineWrapper">
 			<el-timeline>
-				<TimeLineItem  v-for="(life, index) in lifes"
+				<TimeLineItem  v-for="(life, index) in Lifes"
 					:key="index"
 					:timestamp="life.timestamp"
 					:title="life.title"
@@ -17,6 +17,9 @@
 </template>
 
 <script>
+	import { mapGetters } from 'vuex'
+	import { GET_LIFEs } from './store/types.js'
+
 	import TimeLineItem from "components/TimeLineItem.vue"
 	export default {
 		name: 'Life',
@@ -24,20 +27,15 @@
 			TimeLineItem
 		},
 		data(){
-			return {
-				lifes: [
-				{
-					title: "出生",
-					timestamp: "1998/6/5",
-					content: "第一眼见到这个世界，会是什么养的心情呢？"
-				},
-				{
-					title: "上小学",
-					timestamp: "2006/9/1",
-					content: "开学啦，不知道会不会交到好朋友？"
-				}
-				]
-			}
+			return {  }
+		},
+		mounted(){
+			this.$store.dispatch(GET_LIFEs)
+		},
+		computed:{
+			...mapGetters([
+				'Lifes',
+			])
 		}
 	}
 </script>

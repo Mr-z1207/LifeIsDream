@@ -1,1 +1,1 @@
-// export const NAME = 'name'
+export const GET_LIFEs = 'get_lifes'
