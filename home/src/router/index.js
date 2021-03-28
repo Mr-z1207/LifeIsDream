@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from 'views/Home.vue'
-import Life from 'views/Life.vue'
-import Mood from 'views/Mood.vue'
-import Blog from 'views/Blog.vue'
+import Home from 'views/Home'
+import Life from 'views/Life'
+import Mood from 'views/Mood'
+import Blog from 'views/Blog'
 
 const routes = [
   {
