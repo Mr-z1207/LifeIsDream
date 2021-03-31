@@ -7,24 +7,21 @@ import { SERVER, API_CONFIG } from './config.js'
 * 	key: (data)=>{ ... }
 * }
 */
-function getApiObj(apiConfig){
-	var apiObj = {}
-
-	for (var key in apiConfig){
+const getApiObj = (apiConfig)=>{
+	const apiObj = {}
+	for(let key in apiConfig){
 		apiObj[key] = (data) => {
-			var url = apiConfig[key][0] || ''
-			url = SERVER + url
-			var method = apiConfig[key][1] || 'get'
+			const url = SERVER + apiConfig[key][0] || ''
+			const method = apiConfig[key][1] || 'get'
 			return request(url,method,data)
 		}
 	}
-
 	return apiObj
 }
 
-function request(url,method,data){
+const request = (url,method,data)=>{
 	return new Promise((resolve,reject)=>{
-		var options = {
+		const options = {
 			url,
 			method,
 			// 跨域请求是否提供凭据信息（cookie）
@@ -41,7 +38,7 @@ function request(url,method,data){
 
 		axios(options)
 		.then(result => {
-			var data = result.data
+			const data = result.data
 			if(data.code == 10){
 				resolve('code==10')
 			}else{

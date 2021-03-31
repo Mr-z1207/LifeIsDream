@@ -56,6 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // =========================== 处理路由 ===========================
 app.use('/users', require('./routes/users.js'));
+app.use('/lifes', require('./routes/lifes.js'));
 
 
 module.exports = app;

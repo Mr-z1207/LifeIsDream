@@ -13,12 +13,13 @@
 				</TimeLineItem>
 			</el-timeline>
 		</div>
+		<el-button type="primary" icon="el-icon-edit" circle @click="addLife"></el-button>
 	</div>
 </template>
 
 <script>
 	import { mapGetters } from 'vuex'
-	import { GET_LIFEs } from './store/types.js'
+	import { GET_LIFEs, ADD_LIFEs } from './store/types.js'
 
 	import TimeLineItem from "components/TimeLineItem.vue"
 	export default {
@@ -31,6 +32,15 @@
 		},
 		mounted(){
 			this.$store.dispatch(GET_LIFEs)
+		},
+		methods: {
+			addLife(){
+				this.$store.dispatch(ADD_LIFEs, {
+					title: '上班',
+					content: '挣钱啦~~',
+					timestamp: '2020年7月10日',
+				})
+			}
 		},
 		computed:{
 			...mapGetters([
