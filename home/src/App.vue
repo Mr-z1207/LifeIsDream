@@ -67,7 +67,6 @@
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 }
-
 .el-header {
 	background-color: #35264F;
 }

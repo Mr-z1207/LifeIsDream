@@ -97,7 +97,7 @@
   font-weight: bold;
 }
 .el-timeline-item__timestamp_span1{
-  left: 20px;
+  left: -35px;
 }
 .el-timeline-item__timestamp_span2{
   left: 165px;

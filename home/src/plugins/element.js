@@ -24,5 +24,5 @@ export default (app) => {
   app.use(ElAffix)
   app.use(ElTimeline)
   app.use(ElTimelineItem)
-  app.use(ElCard,)
+  app.use(ElCard)
 }
