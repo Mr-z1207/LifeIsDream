@@ -10,9 +10,7 @@
 			<router-link to="/mood" v-slot="{ isActive }">
 				<li :class="{ active: isActive }">心情分享</li>
 			</router-link>
-			<router-link to="/blog" v-slot="{ isActive }">
-				<li :class="{ active: isActive }">我的博客</li>
-			</router-link>
+			<li><a href="http://blog.mr1207.cn/">我的博客</a></li>
 		</ul>
 	</div>
 </template>
@@ -33,21 +31,20 @@ export default {
 		color: #99CCFF;
 		text-decoration: none;
 
-		li{
-			margin: 0 auto;
-			padding: 10px;
-			width: 85%;
-			font-size: 20px;
-			line-height: 1.7;
-			font-weight: bold;
-			border-top: 1px solid #89898979;
-		}
 		&:first-child li{
 			margin-top: 60px;
 			border-top: none;
 		}
 	}
-
+	li{
+		margin: 0 auto;
+		padding: 10px;
+		width: 85%;
+		font-size: 20px;
+		line-height: 1.7;
+		font-weight: bold;
+		border-top: 1px solid #89898979;
+	}
 	.active{
 		background-color: #565753D0;
 	}

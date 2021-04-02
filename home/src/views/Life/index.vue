@@ -2,11 +2,11 @@
 	<div class="Life">
 		<div class="timelineWrapper">
 			<el-timeline>
-				<TimeLineItem  v-for="(life, index) in Lifes" :key="index" :timestamp="life.timestamp" :title="life.title">
+				<TimeLineItem  v-for="(life) in Lifes" :key="life._id" :timestamp="life.timestamp" :title="life.title">
 					<el-card>
 						<span class="LifeContent">{{life.content}}</span>
 						<span class="rmBtnWrapper">
-							<el-button class="rmBtn" type="danger" icon="el-icon-close" circle @click="rmLife"></el-button>
+							<el-button class="rmBtn" type="danger" icon="el-icon-close" circle @click="rmLife(life._id)"></el-button>
 						</span>
 					</el-card>
 				</TimeLineItem>
@@ -42,8 +42,8 @@
 					timestamp: '2020年7月10日',
 				})
 			},
-			rmLife(){
-				this.$store.dispatch(RM_LIFEs)
+			rmLife(id){
+				this.$store.dispatch(RM_LIFEs, id)
 			}
 		},
 		computed:{
@@ -61,7 +61,9 @@
 	text-align: left;
 }
 .el-affix{
-	text-align: right;
+	position: absolute;
+	width: 0px;
+	right: 150px;
 }
 .addBtn{
 	margin-right: 40px;
