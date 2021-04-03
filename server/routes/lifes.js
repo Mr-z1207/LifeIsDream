@@ -6,7 +6,7 @@ var LifeModel = require('../models/lifes.js');
 router.get("/", async (req, res) => {
 	// var { password, phone, username } = req.body
 	try{
-		LifeModel.find({  }, "-_id -__v").sort()
+		LifeModel.find({  }, "-__v").sort('timestamp')
 		.then((Lifes)=>{
 			if(Lifes){
 				res.json({
@@ -34,7 +34,7 @@ router.get("/", async (req, res) => {
 router.post("/add", async (req, res) => {
 	var { title, content, timestamp } = req.body
 	try{
-		await new LifeModel({
+		new LifeModel({
 			title,
 			content,
 			timestamp
@@ -48,14 +48,45 @@ router.post("/add", async (req, res) => {
 			}else{
 				res.json({
 					code: 0,
-					message: '添加成功',
-					data: {
-						newLife: {
-							title,
-							content,
-							timestamp
-						}
+					message: '添加成功'
+				})
+			}
+		})
+	}
+	catch (e) {
+		console.log(e)
+		res.json({
+			code: 1,
+			message: '网络错误，请稍后再试'
+		})
+	}
+})
+
+// 删除lifes
+router.post("/rm", async (req, res) => {
+	var {id} = req.body
+	try{
+		LifeModel.findById(id)
+		.then((Life)=>{
+			if(Life){
+				Life.remove((err, doc)=>{
+					if(err){
+						res.json({
+							code: 1,
+							message: '网络错误，请稍后再试'
+						})
+					}else{
+						res.json({
+							code: 0,
+							message: '删除成功',
+							data: doc._id
+						})
 					}
+				})
+			}else{
+				res.json({
+					code: 1,
+					message: '网络错误，请稍后再试'
 				})
 			}
 		})

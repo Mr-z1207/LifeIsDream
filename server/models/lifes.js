@@ -8,7 +8,7 @@ var LifeSchema = new mongoose.Schema({
 		type: String,
 	},
 	timestamp: {
-		type: String,
+		type: Number,
 	}
 })
 

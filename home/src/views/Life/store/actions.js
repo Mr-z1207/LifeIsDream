@@ -8,10 +8,10 @@ export default {
 			commit(GET_LIFEs, result.data)
 		}
 	},
-	async [ADD_LIFEs]({ commit }, data){
+	async [ADD_LIFEs]({ dispatch }, data){
 		var result = await api.addLife(data)
 		if(result.code == 0){
-			commit(ADD_LIFEs, result.data)
+			dispatch(GET_LIFEs)
 		}
 	},
 	async [RM_LIFEs]({ commit }, id){
